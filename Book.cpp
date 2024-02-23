@@ -9,7 +9,7 @@
     //deconstructor
     Book::~Book()
     {
-
+        icon_ = nullptr;
     }
     /**
      * @brief Construct a new Book using another book object as parameter
@@ -165,27 +165,40 @@
     {
         price_ = price;
     }
-
+    /**
+     * @return: return the vector of keywords of the book
+    */
     const std::vector<std::string>& Book::getKeywords() const
     {
         return keywords_;
     }
-
+    /**
+     * @brief sets the incoming keywords vector to the book's vector
+     * @param vector of strings
+    */
     void Book::setKeywords(const std::vector<std::string>& keywords)
     {
         keywords_ = keywords;
     }
-
+    /**
+     * @brief returns the blurb of the book
+     * @return string
+    */
     const std::string& Book::getBlurb() const
     {
         return blurb_;
     }
-
+    /**
+     * @brief sets the incoming blurb to the book's blurb
+     * @param string
+    */
     void Book::setBlurb(const std::string& blurb)
     {
         blurb_ = blurb;
     }
-
+    /**
+     * @brief prints the book in the proper formatting
+    */
     void Book::print() const
     {
         std::cout << "Title: " << title_ << std::endl;
