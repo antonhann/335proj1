@@ -9,7 +9,7 @@
     //deconstructor
     Book::~Book()
     {
-        delete []icon_;
+        icon_ = nullptr;
     }
     /**
      * @brief Construct a new Book using another book object as parameter
