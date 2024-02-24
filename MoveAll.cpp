@@ -12,9 +12,15 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
   // DO NOT ALTER ABOVE HERE
 
   for(auto it = dest.begin(); it!=dest.end(); ++it){
-    source.push_back(*it);
-    books_moved ++;
-    dest.erase(it);
+    std::vector<std::string> insideKeywords = it->getKeywords();
+    for(auto word = insideKeywords.begin(); word != insideKeywords.end(); ++word){
+      if(*word == keyword){
+        source.push_back(*it);
+        books_moved ++;
+        dest.erase(it);
+        break;
+      }
+    }
   }
 
   // DO NOT ALTER BELOW HERE

@@ -9,7 +9,7 @@
     //deconstructor
     Book::~Book()
     {
-        icon_ = nullptr;
+        delete []icon_;
     }
     /**
      * @brief Construct a new Book using another book object as parameter
@@ -27,7 +27,7 @@
         blurb_ = rhs.blurb_;
     }
     /**
-     * @brief 
+     * @brief assignment operator of book object that assigns the book to rhs
      * 
      * @param: Book Object
      * @return reference of the assigned book
@@ -50,13 +50,13 @@
      */
     Book::Book(Book&& rhs)
     {
-        title_ = rhs.title_;
-        author_ = rhs.author_;
-        ISBN_ = rhs.ISBN_;
-        icon_ = rhs.icon_;
-        price_ = rhs.price_;
-        keywords_ = rhs.keywords_;
-        blurb_ = rhs.blurb_;
+        title_ = std::move(rhs.title_);
+        author_ = std::move(rhs.author_);
+        ISBN_ = std::move(rhs.ISBN_);
+        icon_ = std::move(rhs.icon_);
+        price_ = std::move(rhs.price_);
+        keywords_ = std::move(rhs.keywords_);
+        blurb_ = std::move(rhs.blurb_);
     }
     /**
      * @brief move constructor: Book object from another Rvalue Book object
@@ -66,13 +66,13 @@
      */
     Book& Book::operator=(Book&& rhs)
     {
-        title_ = rhs.title_;
-        author_ = rhs.author_;
-        ISBN_ = rhs.ISBN_;
-        icon_ = rhs.icon_;
-        price_ = rhs.price_;
-        keywords_ = rhs.keywords_;
-        blurb_ = rhs.blurb_;
+        title_ = std::move(rhs.title_);
+        author_ = std::move(rhs.author_);
+        ISBN_ = std::move(rhs.ISBN_);
+        icon_ = std::move(rhs.icon_);
+        price_ = std::move(rhs.price_);
+        keywords_ = std::move(rhs.keywords_);
+        blurb_ = std::move(rhs.blurb_);
         return *this;
     }
     /**
