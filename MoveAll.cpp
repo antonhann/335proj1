@@ -11,8 +11,11 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
   int books_moved=0; // counts books moved
   // DO NOT ALTER ABOVE HERE
 
-  // erase this comment and write your code here
-
+  for(auto it = dest.begin(); it!=dest.end(); ++it){
+    source.push_back(*it);
+    books_moved ++;
+    dest.erase(it);
+  }
 
   // DO NOT ALTER BELOW HERE
   const auto t1_end = std::chrono::steady_clock::now();

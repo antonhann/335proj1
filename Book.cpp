@@ -1,5 +1,5 @@
 #include "Book.hpp"
-
+#include <cmath>
     // write and document all methods in this file.
     //default constructor
     Book::Book()
@@ -204,15 +204,23 @@
         std::cout << "Title: " << title_ << std::endl;
         std::cout << "Author: " << author_ << std::endl;
         std::cout << "IBSN: " << ISBN_ << std::endl;
-        std::cout << "Icon: " << icon_ << std::endl;
-        std::cout << "Price: " << price_ << std::endl;
+        std::cout << "Icon: ";
+        for(int i = 0; i < 80; i++){
+            if(i != 79){
+                std::cout << *(icon_ + i) << " ";
+            }
+            else{
+                std::cout << *(icon_ + i) << std::endl;
+            }
+        }
+        std::cout << "Price: $" << (round((price_) * 100))/100 << std::endl;
         std::cout << "Keywords: ";
         for(int i = 0; i < keywords_.size(); i++){
             if(i != keywords_.size() - 1){
                 std::cout << keywords_[i] << ", ";
             }
             else{
-                std::cout << keywords_[i];
+                std::cout << keywords_[i] << std::endl;
             }
         }
         std::cout << "Blurb: " << blurb_ << std::endl;

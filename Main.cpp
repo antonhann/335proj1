@@ -109,7 +109,7 @@ int main(){
   }
 
   // write your test cases here
-
+  catalog[0].print();
 
   return 0;
 }
