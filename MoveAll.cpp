@@ -16,6 +16,7 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
       if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
         dest.push_back(*it);
         books_moved ++;
+        source.erase(it);
       }
     }
   }
