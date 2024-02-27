@@ -10,20 +10,13 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
   const auto t1_start = std::chrono::steady_clock::now();
   int books_moved=0; // counts books moved
   // DO NOT ALTER ABOVE HERE
-  for(auto it = source.begin(); it!=source.end(); ++it){ //outer iterator that iterates through the source
-    std::vector<std::string> insideKeywords = it->getKeywords();
-    for(auto word = insideKeywords.begin(); word != insideKeywords.end(); ++word){ //iterate through the current book's keywords
-      if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
-        dest.push_back(*it);
-        books_moved ++;
-      }
-    }
-  }
   for(auto it = source.begin(); it!=source.end();){ //outer iterator that iterates through the source
     std::vector<std::string> insideKeywords = it->getKeywords();
     bool erased = false;
     for(auto word = insideKeywords.begin(); word != insideKeywords.end(); ++word){ //iterate through the current book's keywords
       if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
+        dest.push_back(*it);
+        books_moved ++;
         erased = true;
         it = source.erase(it);
       }
@@ -32,6 +25,19 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
       ++it;
     }
   }
+  // for(auto it = source.begin(); it!=source.end();){ //outer iterator that iterates through the source
+  //   std::vector<std::string> insideKeywords = it->getKeywords();
+  //   bool erased = false;
+  //   for(auto word = insideKeywords.begin(); word != insideKeywords.end(); ++word){ //iterate through the current book's keywords
+  //     if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
+  //       erased = true;
+  //       it = source.erase(it);
+  //     }
+  //   }
+  //   if(!erased){
+  //     ++it;
+  //   }
+  // }
   // DO NOT ALTER BELOW HERE
   const auto t1_end = std::chrono::steady_clock::now();
   int t1 = std::chrono::duration <double, std::micro> (t1_end - t1_start).count();
