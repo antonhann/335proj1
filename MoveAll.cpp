@@ -16,6 +16,13 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
       if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
         dest.push_back(*it);
         books_moved ++;
+      }
+    }
+  }
+  for(auto it = source.begin(); it!=source.end(); ++it){ //outer iterator that iterates through the source
+    std::vector<std::string> insideKeywords = it->getKeywords();
+    for(auto word = insideKeywords.begin(); word != insideKeywords.end(); ++word){ //iterate through the current book's keywords
+      if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
         source.erase(it);
       }
     }

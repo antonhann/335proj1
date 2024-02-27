@@ -4,7 +4,7 @@
     //default constructor
     Book::Book()
     {
-
+        
     }
     //deconstructor
     Book::~Book()
@@ -220,8 +220,9 @@
                 std::cout << keywords_[i] << ", ";
             }
             else{
-                std::cout << keywords_[i] << std::endl;
+                std::cout << keywords_[i];
             }
         }
+        std::cout << std::endl;
         std::cout << "Blurb: " << blurb_ << std::endl;
     }

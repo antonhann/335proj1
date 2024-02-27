@@ -119,10 +119,17 @@ int main(){
     }
   }
   std::cout << c << std::endl;
+  // Book b;
+  // b.setTitle("Hello");
+  // b.setAuthor("Author");
+  // b.setBlurb("s");
+  // b.setPrice(2);
+  // b.setISBN(12312312312321);
+  // b.print();
   // write your test cases here
   moveAll(key,catalog,cart);
-  // for(int i = 0; i < catalog.size(); i++){
-  //   catalog[i].print();
-  // }
+  for(int i = 0; i < cart.size(); i++){
+    cart[i].print();
+  }
   return 0;
 }
