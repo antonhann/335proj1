@@ -213,7 +213,7 @@
                 std::cout << *(icon_ + i) << std::endl;
             }
         }
-        std::cout << "Price: $" << (round((price_) * 100))/100 << std::endl;
+        std::cout << "Price: $" << std::fixed << std::setprecision(2) << price_ << std::endl;
         std::cout << "Keywords: ";
         for(int i = 0; i < keywords_.size(); i++){
             if(i != keywords_.size() - 1){

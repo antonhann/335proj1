@@ -126,11 +126,11 @@ int main(){
   // b.setISBN(12312312312321);
   // b.print();
   // write your test cases here
-  std::cout << catalog.size();
+  // std::cout << catalog.size();
   moveAll(key,catalog,cart);
-  // for(int i = 0; i < cart.size(); i++){
-  //   cart[i].print();
-  // }
-  std::cout << catalog.size();
+  for(int i = 0; i < catalog.size(); i++){
+    catalog[i].print();
+  }
+  // std::cout << catalog.size();
   return 0;
 }
