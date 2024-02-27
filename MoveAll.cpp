@@ -19,12 +19,17 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
       }
     }
   }
-  for(auto it = source.begin(); it!=source.end(); ++it){ //outer iterator that iterates through the source
+  for(auto it = source.begin(); it!=source.end();){ //outer iterator that iterates through the source
     std::vector<std::string> insideKeywords = it->getKeywords();
+    bool erased = false;
     for(auto word = insideKeywords.begin(); word != insideKeywords.end(); ++word){ //iterate through the current book's keywords
       if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
-        source.erase(it);
+        erased = true;
+        it = source.erase(it);
       }
+    }
+    if(!erased){
+      ++it;
     }
   }
   // DO NOT ALTER BELOW HERE

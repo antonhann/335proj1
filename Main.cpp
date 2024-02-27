@@ -107,7 +107,7 @@ int main(){
     catalog.push_back(temp);
 
   }
-  std::string key = "Fake";
+  std::string key = "Asia";
   int c = 0;
   for(int i = 0; i < catalog.size();i ++){
     std::vector<std::string> k = catalog[i].getKeywords();
@@ -118,7 +118,6 @@ int main(){
       }
     }
   }
-  std::cout << c << std::endl;
   // Book b;
   // b.setTitle("Hello");
   // b.setAuthor("Author");
@@ -127,9 +126,11 @@ int main(){
   // b.setISBN(12312312312321);
   // b.print();
   // write your test cases here
+  std::cout << catalog.size();
   moveAll(key,catalog,cart);
-  for(int i = 0; i < cart.size(); i++){
-    cart[i].print();
-  }
+  // for(int i = 0; i < cart.size(); i++){
+  //   cart[i].print();
+  // }
+  std::cout << catalog.size();
   return 0;
 }
