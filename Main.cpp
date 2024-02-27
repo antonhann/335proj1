@@ -107,11 +107,22 @@ int main(){
     catalog.push_back(temp);
 
   }
-
-  // write your test cases here
-  // moveAll("Magic",catalog,cart);
-  for(int i = 0; i < catalog.size(); i++){
-    catalog[i].print();
+  std::string key = "Fake";
+  int c = 0;
+  for(int i = 0; i < catalog.size();i ++){
+    std::vector<std::string> k = catalog[i].getKeywords();
+    for(int j = 0; j < k.size(); j++){
+      if(k[j] == key){
+        c++;
+        break;
+      }
+    }
   }
+  std::cout << c << std::endl;
+  // write your test cases here
+  moveAll(key,catalog,cart);
+  // for(int i = 0; i < catalog.size(); i++){
+  //   catalog[i].print();
+  // }
   return 0;
 }
