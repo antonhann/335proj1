@@ -109,7 +109,9 @@ int main(){
   }
 
   // write your test cases here
-  moveAll("Magic",catalog,cart);
-  cart[0].print();
+  // moveAll("Magic",catalog,cart);
+  for(int i = 0; i < catalog.size(); i++){
+    catalog[i].print();
+  }
   return 0;
 }

@@ -203,7 +203,7 @@
     {
         std::cout << "Title: " << title_ << std::endl;
         std::cout << "Author: " << author_ << std::endl;
-        std::cout << "IBSN: " << ISBN_ << std::endl;
+        std::cout << "ISBN: " << ISBN_ << std::endl;
         std::cout << "Icon: ";
         for(int i = 0; i < 80; i++){
             if(i != 79){
