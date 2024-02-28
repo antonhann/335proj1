@@ -205,7 +205,7 @@
         std::cout << "Author: " << author_ << std::endl;
         std::cout << "ISBN: " << ISBN_ << std::endl;
         std::cout << "Icon: ";
-        for(int i = 0; i < 80; i++){
+        for(int i = 0; i < 80; i++){ //since icon is pointing to the start of the 80 count array, we can increment the address then dereference in order to get all the numbers
             if(i != 79){
                 std::cout << *(icon_ + i) << " ";
             }
@@ -213,9 +213,9 @@
                 std::cout << *(icon_ + i) << std::endl;
             }
         }
-        std::cout << "Price: $" << std::fixed << std::setprecision(2) << price_ << std::endl;
+        std::cout << "Price: $" << std::fixed << std::setprecision(2) << price_ << std::endl; //set precision2 allows for price to be rounded to nearest hunrdeth decicmal
         std::cout << "Keywords: ";
-        for(int i = 0; i < keywords_.size(); i++){
+        for(int i = 0; i < keywords_.size(); i++){ //iterate thru the keywords and print it with comma if its not at the end of the vector.
             if(i != keywords_.size() - 1){
                 std::cout << keywords_[i] << ", ";
             }

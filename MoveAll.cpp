@@ -10,21 +10,25 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
   const auto t1_start = std::chrono::steady_clock::now();
   int books_moved=0; // counts books moved
   // DO NOT ALTER ABOVE HERE
+
+
   for(auto it = source.begin(); it!=source.end();){ //outer iterator that iterates through the source
-    std::vector<std::string> insideKeywords = it->getKeywords();
-    bool erased = false;
+    std::vector<std::string> insideKeywords = it->getKeywords(); //keywords of the current book
+    bool erased = false; //checks if we erased the current iteration
     for(auto word = insideKeywords.begin(); word != insideKeywords.end(); ++word){ //iterate through the current book's keywords
       if(*word == keyword){//checks if its the valid keyword and updates the source and dest vectors apporiately
         dest.push_back(*it);
         books_moved ++;
         erased = true;
-        it = source.erase(it);
+        it = source.erase(it); //restores order of the iteration to ensure we dont miss any books while erasing
       }
     }
-    if(!erased){
+    if(!erased){ //if we didnt erase we have to increment the iterator
       ++it;
     }
   }
+
+  
   // DO NOT ALTER BELOW HERE
   const auto t1_end = std::chrono::steady_clock::now();
   int t1 = std::chrono::duration <double, std::micro> (t1_end - t1_start).count();
