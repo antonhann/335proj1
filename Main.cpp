@@ -6,6 +6,16 @@
 #include <sstream>
 #include "Book.hpp"
 #include "MoveAll.hpp"
+Book makeBook(){
+    Book b;
+    b.setTitle("Hello");
+    b.setAuthor("Author");
+    b.setBlurb("s");
+    b.setPrice(2);
+    b.setKeywords({"hello"});
+    b.setISBN(12312312312321);
+    return b;
+}
 int main(){
   
   std::vector<Book> catalog, cart;
@@ -118,19 +128,14 @@ int main(){
       }
     }
   }
-  // Book b;
-  // b.setTitle("Hello");
-  // b.setAuthor("Author");
-  // b.setBlurb("s");
-  // b.setPrice(2);
-  // b.setISBN(12312312312321);
-  // b.print();
-  // write your test cases here
-  // std::cout << catalog.size();
-  moveAll(key,catalog,cart);
-  for(int i = 0; i < catalog.size(); i++){
-    catalog[i].print();
-  }
+  Book a;
+  a.print();
+  a = makeBook();
+  a.print();
+  // moveAll(key,catalog,cart);
+  // for(int i = 0; i < catalog.size(); i++){
+  //   catalog[i].print();
+  // }
   // std::cout << catalog.size();
   return 0;
 }

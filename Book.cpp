@@ -159,7 +159,7 @@
     /**
      * @brief sets the books price to the parameter price
      * 
-     * @param price 
+     * @param float 
      */
     void Book::setPrice(float price)
     {
