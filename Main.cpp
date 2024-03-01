@@ -117,21 +117,20 @@ int main(){
     catalog.push_back(temp);
 
   }
-  std::string key = "Asia";
-  int c = 0;
-  for(int i = 0; i < catalog.size();i ++){
-    std::vector<std::string> k = catalog[i].getKeywords();
-    for(int j = 0; j < k.size(); j++){
-      if(k[j] == key){
-        c++;
-        break;
-      }
-    }
-  }
-  Book a;
-  a.print();
-  a = makeBook();
-  a.print();
+  // std::string key = "Asia";
+  // int c = 0;
+  // for(int i = 0; i < catalog.size();i ++){
+  //   std::vector<std::string> k = catalog[i].getKeywords();
+  //   for(int j = 0; j < k.size(); j++){
+  //     if(k[j] == key){
+  //       c++;
+  //       break;
+  //     }
+  //   }
+  // }
+  catalog[0].print();
+  // delete a;
+  // a->print();
   // moveAll(key,catalog,cart);
   // for(int i = 0; i < catalog.size(); i++){
   //   catalog[i].print();
