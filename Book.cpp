@@ -86,6 +86,9 @@
         title_ = std::move(rhs.title_);
         author_ = std::move(rhs.author_);
         ISBN_ = std::move(rhs.ISBN_);
+        if(icon_ != nullptr){
+            delete [] icon_;
+        }
         icon_ = rhs.icon_; //transfer ownership of the dynamically allocated array
         rhs.icon_ = nullptr;
         price_ = std::move(rhs.price_);
